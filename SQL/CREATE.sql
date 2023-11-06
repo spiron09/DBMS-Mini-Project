@@ -46,9 +46,9 @@ CREATE TABLE Lessons
   Time TIME NOT NULL,
   Duration INT NOT NULL,
   PRIMARY KEY (Lesson_ID),
-  FOREIGN KEY (Student_ID) REFERENCES Student(Student_ID),
-  FOREIGN KEY (Instructor_ID) REFERENCES Instructors(Instructor_ID),
-  FOREIGN KEY (Vehicle_ID) REFERENCES Vehicles(Vehicle_ID)
+  FOREIGN KEY (Student_ID) REFERENCES Student(Student_ID) ON DELETE CASCADE,
+  FOREIGN KEY (Instructor_ID) REFERENCES Instructors(Instructor_ID) ON DELETE CASCADE,
+  FOREIGN KEY (Vehicle_ID) REFERENCES Vehicles(Vehicle_ID) ON DELETE CASCADE
 );
 
 CREATE TABLE Payment
@@ -59,5 +59,5 @@ CREATE TABLE Payment
   Date DATE NOT NULL,
   Type VARCHAR(20) NOT NULL,
   PRIMARY KEY (PaymentID),
-  FOREIGN KEY (Student_ID) REFERENCES Student(Student_ID)
+  FOREIGN KEY (Student_ID) REFERENCES Student(Student_ID) ON DELETE CASCADE
 );

@@ -1,9 +1,9 @@
 import mysql.connector
 
 database = mysql.connector.connect(
-    host="localhost", user="root", password="sneilium", database="Issues_PES1UG20CS462"
+    host="localhost", user="root", password="root", database="Drivingschool"
 )
-curs = database.cursor()
+curs = database.cursor(buffered=True)
 
 
 def get_tables():
@@ -35,8 +35,8 @@ def get_data(name):
 
 def delete_data(name, df):
     for each_id in df:
-        curs.execute(f"DELETE FROM {name} WHERE {df.name}='{each_id}'")
-    database.commit()
+        curs.execute(f"DELETE FROM {name} WHERE {df.name}='{each_id}'") 
+    # database.commit
 
 
 def get_row(name, df):

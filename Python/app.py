@@ -5,11 +5,11 @@ from sql import write_sql
 
 def main():
     st.set_page_config(
-        page_title="Issue Management System",
+        page_title="SLV Driving School",
         layout="wide",
     )
 
-    st.title("Issue Management System")
+    st.title("Welcome to SLV Driving School")
     menu = ["View Tables", "Insert Entry",
             "Update Entry", "Delete Entry", "Custom SQL"]
 
